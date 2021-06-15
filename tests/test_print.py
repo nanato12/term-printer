@@ -75,3 +75,25 @@ class TestPrint:
         out, err = capfd.readouterr()
         assert out == expected
         assert err == ""
+
+    @pytest.mark.parametrize(
+        "stdout, attrs, expected",
+        [
+            ("this is bold", [Format.BOLD], "\033[1mthis is bold\033[m\n"),
+            ("this is faint", [Format.FAINT], "\033[2mthis is faint\033[m\n"),
+            ("this is italic", [Format.ITALIC], "\033[3mthis is italic\033[m\n"),
+            ("this is underline", [Format.UNDERLINE], "\033[4mthis is underline\033[m\n"),
+            ("this is blink", [Format.BLINK], "\033[5mthis is blink\033[m\n"),
+            ("this is fast_blink", [Format.FAST_BLINK], "\033[6mthis is fast_blink\033[m\n"),
+            ("this is reverse", [Format.REVERSE], "\033[7mthis is reverse\033[m\n"),
+            ("this is conceal", [Format.CONCEAL], "\033[8mthis is conceal\033[m\n"),
+            ("this is strike", [Format.STRIKE], "\033[9mthis is strike\033[m\n"),
+        ],
+    )
+    def test_attrs(
+        self, capfd: CaptureFixture, stdout: StdText, attrs: list, expected: str
+    ) -> None:
+        cprint(stdout, attrs=attrs)
+        out, err = capfd.readouterr()
+        assert out == expected
+        assert err == ""
