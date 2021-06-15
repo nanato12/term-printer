@@ -3,6 +3,26 @@ Print 'text color' and 'text format' on Term with Python
 
 **※ It may not work depending on the OS and shell used.**
 
+## PIP
+
+```bash
+$ pip install term-printer
+```
+
+## import
+
+```python
+from term_printer import Color, StdText, cprint
+```
+
+If you want to override bultin `print` function
+
+
+```python
+from term_printer import Color, StdText, cprint as print
+```
+
+
 ## Usage
 
 ### 1. Color print
