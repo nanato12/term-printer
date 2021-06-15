@@ -66,68 +66,41 @@ cprint("this is a cyan bold italic pen", attrs=[Color.CYAN, Format.BOLD, Format.
 
 <img src="https://raw.githubusercontent.com/nanato12/term-printer/main/docs/images/examples_attrs_print_result.png">
 
-### 1. Color print
+### 2. StdText print
 
-#### **[source](https://github.com/nanato12/term-printer/blob/main/examples/color_print.py)**
+#### **[source](https://github.com/nanato12/term-printer/blob/main/examples/std_text_print.py)**
 
 ```python
-from term_printer import Color, StdText, cprint
+from term_printer import Color, Format, StdText, cprint
 
-cprint(StdText("1234567890", Color.BLACK))
-cprint(StdText("1234567890", Color.RED))
-cprint(StdText("1234567890", Color.GREEN))
-cprint(StdText("1234567890", Color.YELLOW))
-cprint(StdText("1234567890", Color.BLUE))
-cprint(StdText("1234567890", Color.MAGENTA))
-cprint(StdText("1234567890", Color.CYAN))
-cprint(StdText("1234567890", Color.WHITE))
-cprint(StdText("1234567890", Color.DEFAULT))
+# default
+cprint("this is a default pen")
+
+# bold
+cprint(f"this is a {StdText('bold', Format.BOLD)} pen")
+
+# italic
+cprint(f"this is a {StdText('italic', Format.ITALIC)} pen")
+
+# reverse
+cprint(f"this is a {StdText('reverse', Format.REVERSE)} pen")
+
+# red color
+cprint(f"this is a {StdText('red', Color.RED)} pen")
+
+# background magenta color
+cprint(f"this is a {StdText('bg magenta', Color.BG_MAGENTA)} pen")
+
+# magenta color & italic
+cprint(f"this is a {StdText('magenta', Color.MAGENTA)} {StdText('italic', Format.ITALIC)} pen")
+
+# bold & italic
+cprint(f"this is a {StdText('bold', Format.BOLD)} {StdText('italic', Format.ITALIC)} pen")
+
+# cyan color & bold & italic
+cprint(f"this is a {StdText('cyan', Color.CYAN)} {StdText('bold', Format.BOLD)} {StdText('italic', Format.ITALIC)} pen")
 ```
 
 #### result
 
-<img src="https://raw.githubusercontent.com/nanato12/term-printer/main/docs/images/examples_color_print_result.png">
-
-### 2. Background color print
-
-#### **[source](https://github.com/nanato12/term-printer/blob/main/examples/bg_color_print.py)**
-
-```python
-from term_printer import Color, StdText, cprint
-
-cprint(StdText("1234567890", Color.BG_BLACK))
-cprint(StdText("1234567890", Color.BG_RED))
-cprint(StdText("1234567890", Color.BG_GREEN))
-cprint(StdText("1234567890", Color.BG_YELLOW))
-cprint(StdText("1234567890", Color.BG_BLUE))
-cprint(StdText("1234567890", Color.BG_MAGENTA))
-cprint(StdText("1234567890", Color.BG_CYAN))
-cprint(StdText("1234567890", Color.BG_WHITE))
-cprint(StdText("1234567890", Color.BG_DEFAULT))
-```
-
-#### result
-
-<img src="https://raw.githubusercontent.com/nanato12/term-printer/main/docs/images/examples_bg_color_print_result.png">
-
-### 3. Format print
-
-#### **[source](https://github.com/nanato12/term-printer/blob/main/examples/format_print.py)**
-
-```python
-from term_printer import Format, StdText, cprint
-
-cprint(StdText("1234567890", Format.BOLD))
-cprint(StdText("1234567890", Format.FAINT))
-cprint(StdText("1234567890", Format.ITALIC))
-cprint(StdText("1234567890", Format.UNDERLINE))
-cprint(StdText("1234567890", Format.BLINK))
-cprint(StdText("1234567890", Format.FAST_BLINK))
-cprint(StdText("1234567890", Format.REVERSE))
-cprint(StdText("1234567890", Format.CONCEAL))
-cprint(StdText("1234567890", Format.STRIKE))
-```
-
-#### result
-
-<img src="https://raw.githubusercontent.com/nanato12/term-printer/main/docs/images/examples_format_print_result.png">
+<img src="https://raw.githubusercontent.com/nanato12/term-printer/main/docs/images/examples_std_text_print_result.png">
