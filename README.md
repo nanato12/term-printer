@@ -25,9 +25,50 @@ from term_printer import Color, StdText, cprint as print
 
 ## Usage
 
+### 1. Attrs print
+
+Applies to all characters.
+
+#### **[source](https://github.com/nanato12/term-printer/blob/main/examples/attrs_print.py)**
+
+```python
+from term_printer import Color, Format, cprint
+
+# default
+cprint("this is a default pen")
+
+# bold
+cprint("this is a bold pen", attrs=[Format.BOLD])
+
+# italic
+cprint("this is a italic pen", attrs=[Format.ITALIC])
+
+# reverse
+cprint("this is a reverse pen", attrs=[Format.REVERSE])
+
+# red color
+cprint("this is a red pen", attrs=[Color.RED])
+
+# background magenta color
+cprint("this is a bg magenta pen", attrs=[Color.BG_MAGENTA])
+
+# magenta color & italic
+cprint("this is a magenta italic pen", attrs=[Color.MAGENTA, Format.ITALIC])
+
+# bold & italic
+cprint("this is a bold italic pen", attrs=[Format.BOLD, Format.ITALIC])
+
+# cyan color & bold & italic
+cprint("this is a cyan bold italic pen", attrs=[Color.CYAN, Format.BOLD, Format.ITALIC])
+```
+
+#### result
+
+<img src="https://raw.githubusercontent.com/nanato12/term-printer/main/docs/images/examples_attrs_print_result.png">
+
 ### 1. Color print
 
-#### **[source](./examples/color_print.py)**
+#### **[source](https://github.com/nanato12/term-printer/blob/main/examples/color_print.py)**
 
 ```python
 from term_printer import Color, StdText, cprint
@@ -49,7 +90,7 @@ cprint(StdText("1234567890", Color.DEFAULT))
 
 ### 2. Background color print
 
-#### **[source](./examples/bg_color_print.py)**
+#### **[source](https://github.com/nanato12/term-printer/blob/main/examples/bg_color_print.py)**
 
 ```python
 from term_printer import Color, StdText, cprint
@@ -71,7 +112,7 @@ cprint(StdText("1234567890", Color.BG_DEFAULT))
 
 ### 3. Format print
 
-#### **[source](./examples/format_print.py)**
+#### **[source](https://github.com/nanato12/term-printer/blob/main/examples/format_print.py)**
 
 ```python
 from term_printer import Format, StdText, cprint
