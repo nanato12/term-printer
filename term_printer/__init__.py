@@ -14,24 +14,34 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
+from typing import List, Union
+
 from .consts.color import Color
 from .consts.format import Format
 from .objects.std_text import StdText
 
 __description__ = "Print 'text color' and 'text format' on Term with Python"
 __copyright__ = "Copyright 2021 nanato12"
-__version__ = "1.0.0"
-__license__ = "Apache-2.0"
+__version__ = "1.0"
+__license__ = "Apache License 2.0"
 __author__ = "nanato12"
 __author_email__ = "admin@nanato12.info"
 __url__ = "https://github.com/nanato12/term-printer"
 
 
-def cprint(*args, **kwargs) -> None:  # type:ignore
+def cprint(
+    *args, attrs: List[Union[Color, Format]] = [], **kwargs
+) -> None:  # type:ignore
+
+    if not isinstance(attrs, list):
+        raise Exception("'attrs' should be list or None")
+
     stdout = []
     for arg in args:
-        if isinstance(arg, StdText):
-            arg = str(arg)
+        for attr in attrs:
+            if not isinstance(attr, (Color, Format, int)):
+                raise Exception("'attrs' must be a list of Color, Format, int")
+            arg = StdText(str(arg), attr)
         stdout.append(arg)
 
     print(*stdout, **kwargs)
