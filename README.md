@@ -25,7 +25,7 @@ cprint(StdText("1234567890", Color.DEFAULT))
 
 #### result
 
-<img src="./docs/images/examples_color_print_result.png"></src>
+<img src="https://raw.githubusercontent.com/nanato12/term-printer/main/docs/images/examples_color_print_result.png">
 
 ### 2. Background color print
 
@@ -47,7 +47,7 @@ cprint(StdText("1234567890", Color.BG_DEFAULT))
 
 #### result
 
-<img src="./docs/images/examples_bg_color_print_result.png"></src>
+<img src="https://raw.githubusercontent.com/nanato12/term-printer/main/docs/images/examples_bg_color_print_result.png">
 
 ### 3. Format print
 
@@ -69,4 +69,4 @@ cprint(StdText("1234567890", Format.STRIKE))
 
 #### result
 
-<img src="./docs/images/examples_format_print_result.png"></src>
+<img src="https://raw.githubusercontent.com/nanato12/term-printer/main/docs/images/examples_format_print_result.png">
