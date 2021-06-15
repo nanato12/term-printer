@@ -1,6 +1,8 @@
 # term-printer
 Print 'text color' and 'text format' on Term with Python
 
+**※ It may not work depending on the OS and shell used.**
+
 ## Usage
 
 ### 1. Color print
@@ -51,7 +53,7 @@ cprint(StdText("1234567890", Color.BG_DEFAULT))
 
 #### **[source](./examples/format_print.py)**
 
-```
+```python
 from term_printer import Format, StdText, cprint
 
 cprint(StdText("1234567890", Format.BOLD))
