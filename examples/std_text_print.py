@@ -19,10 +19,16 @@ cprint(f"this is a {StdText('red', Color.RED)} pen")
 cprint(f"this is a {StdText('bg magenta', Color.BG_MAGENTA)} pen")
 
 # magenta color & italic
-cprint(f"this is a {StdText('magenta', Color.MAGENTA)} {StdText('italic', Format.ITALIC)} pen")
+cprint(
+    f"this is a {StdText('magenta', Color.MAGENTA)} {StdText('italic', Format.ITALIC)} pen"
+)
 
 # bold & italic
-cprint(f"this is a {StdText('bold', Format.BOLD)} {StdText('italic', Format.ITALIC)} pen")
+cprint(
+    f"this is a {StdText('bold', Format.BOLD)} {StdText('italic', Format.ITALIC)} pen"
+)
 
 # cyan color & bold & italic
-cprint(f"this is a {StdText('cyan', Color.CYAN)} {StdText('bold', Format.BOLD)} {StdText('italic', Format.ITALIC)} pen")
+cprint(
+    f"this is a {StdText('cyan', Color.CYAN)} {StdText('bold', Format.BOLD)} {StdText('italic', Format.ITALIC)} pen"
+)
