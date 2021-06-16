@@ -62,20 +62,20 @@ class Color256:
 
 
 class ColorRGB:
-    __R: int
-    __G: int
-    __B: int
+    __r: int
+    __g: int
+    __b: int
     is_bg: bool
 
-    def __init__(self, R: int, G: int, B: int, is_bg: bool = False) -> None:
-        for k, n in {"R": R, "G": G, "B": B}.items():
+    def __init__(self, r: int, g: int, b: int, is_bg: bool = False) -> None:
+        for k, n in {"R": r, "G": g, "B": b}.items():
             if not (0 <= n <= 255):
                 raise Exception(f"Invalid 256bit color number: {k}:{n}")
-        self.__R = R
-        self.__G = G
-        self.__B = B
+        self.__r = r
+        self.__g = g
+        self.__b = b
         self.is_bg = is_bg
 
     def __str__(self) -> str:
         tag: str = "48" if self.is_bg else "38"
-        return f"{tag};2;{self.__R};{self.__G};{self.__B}"
+        return f"{tag};2;{self.__r};{self.__g};{self.__b}"
