@@ -129,7 +129,7 @@ Color.BLUE  # BLUE foreground color
 Color.BG_BLUE  # BLUE background color
 ```
 
-### **[source](https://github.com/nanato12/term-printer/blob/main/examples/std_text_print.py#L20-52)**
+### **[source](https://github.com/nanato12/term-printer/blob/main/examples/std_text_print.py#L20-L52)**
 
 Definition is [3-bit and 4-bit colors](https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit)
 
@@ -169,7 +169,7 @@ Definition is [8-bit 256 colors](https://en.wikipedia.org/wiki/ANSI_escape_code#
 class ColorRGB(r: int, g: int, b: int, is_bg: bool = False)
 ```
 
-- Three arguments take the integer `0-255`.
+- Three arguments takes `int` (0 - 255).
 
 - Fourth argument takes `bool` (default: False).
 False: change foreground color
