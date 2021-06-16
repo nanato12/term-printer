@@ -16,7 +16,7 @@ limitations under the License.
 
 from typing import List, Union
 
-from .consts.color import Color
+from .consts.color import Color, Color256, ColorRGB
 from .consts.format import Format
 from .objects.std_text import StdText
 
@@ -30,7 +30,7 @@ __url__ = "https://github.com/nanato12/term-printer"
 
 
 def cprint(
-    *args, attrs: List[Union[Color, Format]] = [], **kwargs
+    *args, attrs: List[Union[Color, Color256, ColorRGB, Format, int]] = [], **kwargs
 ) -> None:  # type:ignore
 
     if not isinstance(attrs, list):
@@ -39,8 +39,10 @@ def cprint(
     stdout = []
     for arg in args:
         for attr in attrs:
-            if not isinstance(attr, (Color, Format, int)):
-                raise Exception("'attrs' must be a list of Color, Format, int")
+            if not isinstance(attr, (Color, Color256, ColorRGB, Format, int)):
+                raise Exception(
+                    "'attrs' must be a list of Color, Color256, ColorRGB, Format, int"
+                )
             arg = StdText(str(arg), attr)
         stdout.append(arg)
 
