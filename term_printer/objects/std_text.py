@@ -21,7 +21,7 @@ from ..consts.format import Format
 
 
 class StdText:
-    text: str
+    __text: str
     option: Optional[Union[Color, Color256, ColorRGB, Format, int]]
 
     def __init__(
@@ -29,14 +29,14 @@ class StdText:
         text: str,
         option: Optional[Union[Color, Color256, ColorRGB, Format, int]] = None,
     ) -> None:
-        self.text = text
+        self.__text = text
         self.option = option
 
     def __str__(self) -> str:
         if self.option is None:
-            return self.text
+            return self.__text
         elif isinstance(self.option, (Color, Format)):
             value = self.option.value
         else:
             value = self.option
-        return f"\033[{value}m{self.text}\033[m"
+        return f"\033[{value}m{self.__text}\033[m"
