@@ -12,6 +12,7 @@ flake8 = "*"
 mypy = "*"
 wheel = "*"
 twine = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.9"
