@@ -22,7 +22,7 @@ from .objects.std_text import StdText
 
 __description__ = "Print 'text color' and 'text format' on Term with Python"
 __copyright__ = "Copyright 2021 nanato12"
-__version__ = "1.0"
+__version__ = "1.1"
 __license__ = "Apache License 2.0"
 __author__ = "nanato12"
 __author_email__ = "admin@nanato12.info"
