@@ -23,7 +23,6 @@ class TestPrint:
             (StdText("magenta", Color.MAGENTA), "\033[35mmagenta\033[m\n"),
             (StdText("cyan", Color.CYAN), "\033[36mcyan\033[m\n"),
             (StdText("white", Color.WHITE), "\033[37mwhite\033[m\n"),
-            (StdText("default", Color.DEFAULT), "\033[39mdefault\033[m\n"),
         ],
     )
     def test_color(self, capfd: CaptureFixture, stdout: StdText, expected: str) -> None:
@@ -43,7 +42,6 @@ class TestPrint:
             (StdText("bg_magenta", Color.BG_MAGENTA), "\033[45mbg_magenta\033[m\n"),
             (StdText("bg_cyan", Color.BG_CYAN), "\033[46mbg_cyan\033[m\n"),
             (StdText("bg_white", Color.BG_WHITE), "\033[47mbg_white\033[m\n"),
-            (StdText("bg_default", Color.BG_DEFAULT), "\033[49mbg_default\033[m\n"),
         ],
     )
     def test_bg_color(
