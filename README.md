@@ -162,8 +162,8 @@ class Color256(n: int, is_bg: bool = False)
 
 - First argument takes `int` (0 - 255).
 
-- Second argument takes `bool` (default: False).
-False: change foreground color
+- Second argument takes `bool` (default: False).  
+False: change foreground color  
 True: change background color
 
 Example
@@ -189,8 +189,8 @@ class ColorRGB(r: int, g: int, b: int, is_bg: bool = False)
 
 - Three arguments takes `int` (0 - 255).
 
-- Fourth argument takes `bool` (default: False).
-False: change foreground color
+- Fourth argument takes `bool` (default: False).  
+False: change foreground color  
 True: change background color
 
 Example
