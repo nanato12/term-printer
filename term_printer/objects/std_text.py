@@ -16,16 +16,18 @@ limitations under the License.
 
 from typing import Optional, Union
 
-from ..consts.color import Color
+from ..consts.color import Color, Color256, ColorRGB
 from ..consts.format import Format
 
 
 class StdText:
     text: str
-    option: Optional[Union[Color, Format, int]]
+    option: Optional[Union[Color, Color256, ColorRGB, Format, int]]
 
     def __init__(
-        self, text: str, option: Optional[Union[Color, Format, int]] = None
+        self,
+        text: str,
+        option: Optional[Union[Color, Color256, ColorRGB, Format, int]] = None,
     ) -> None:
         self.text = text
         self.option = option
