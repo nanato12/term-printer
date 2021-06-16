@@ -12,14 +12,14 @@ $ pip install term-printer
 ## import
 
 ```python
-from term_printer import Color, StdText, cprint
+from term_printer import Color, Color256, ColorRGB, StdText, cprint
 ```
 
 If you want to override bultin `print` function
 
 
 ```python
-from term_printer import Color, StdText, cprint as print
+from term_printer import Color, Color256, ColorRGB, StdText, cprint as print
 ```
 
 
