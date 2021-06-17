@@ -14,10 +14,45 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
-from enum import Enum
+from enum import IntEnum, IntFlag, auto
 
 
-class Color(Enum):
+class WinColor(IntFlag):
+    BLACK = 0
+    BLUE = 1
+    GREEN = 2
+    CYAN = 3
+    RED = 4
+    MAGENTA = 5
+    YELLOW = 6
+    WHITE = 7
+    BRIGHT_BLACK = BLACK | 0x08
+    BRIGHT_BLUE = BLUE | 0x08
+    BRIGHT_GREEN = GREEN | 0x08
+    BRIGHT_CYAN = CYAN | 0x08
+    BRIGHT_RED = RED | 0x08
+    BRIGHT_MAGENTA = MAGENTA | 0x08
+    BRIGHT_YELLOW = YELLOW | 0x08
+    BRIGHT_WHITE = WHITE | 0x08
+    BG_BLACK = BLACK << 4
+    BG_BLUE = BLUE << 4
+    BG_GREEN = GREEN << 4
+    BG_CYAN = CYAN << 4
+    BG_RED = RED << 4
+    BG_MAGENTA = MAGENTA << 4
+    BG_YELLOW = YELLOW << 4
+    BG_WHITE = WHITE << 4
+    BG_BRIGHT_BLACK = BRIGHT_BLACK << 4
+    BG_BRIGHT_BLUE = BRIGHT_BLUE << 4
+    BG_BRIGHT_GREEN = BRIGHT_GREEN << 4
+    BG_BRIGHT_CYAN = BRIGHT_CYAN << 4
+    BG_BRIGHT_RED = BRIGHT_RED << 4
+    BG_BRIGHT_MAGENTA = BRIGHT_MAGENTA << 4
+    BG_BRIGHT_YELLOW = BRIGHT_YELLOW << 4
+    BG_BRIGHT_WHITE = BRIGHT_WHITE << 4
+
+
+class Color(IntEnum):
     BLACK = 30
     RED = 31
     GREEN = 32
@@ -50,6 +85,10 @@ class Color(Enum):
     BG_BRIGHT_MAGENTA = 105
     BG_BRIGHT_CYAN = 106
     BG_BRIGHT_WHITE = 107
+
+    @property
+    def win32_value(self):
+        return WinColor[self.name]
 
 
 class Color256:
